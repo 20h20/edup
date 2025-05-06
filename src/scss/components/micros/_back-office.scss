@@ -199,6 +199,11 @@ BACK OFFICE COMPONENT
 							li{
 								margin: 10px 0;
 
+								.cbo-gitdate{
+									display: block;
+									color: rgba($colorblack, .4);
+									margin-bottom: 6px;
+								}
 								.cbo-gitid{
 									font-size: 12px;
 									color: rgba($colorblack, .4);
@@ -213,6 +218,7 @@ BACK OFFICE COMPONENT
 										font-family:"icons";
 										content:"\f104";
 										margin-right: 6px;
+										font-size: 8px;
 										width: 20px;
 										height: 20px;
 										border:1px solid;

@@ -220,32 +220,54 @@
 
 	// Affichage des modifications via Git
 	function render_custom_git_commits_dashboard_widget() {
-		$git_dir = get_stylesheet_directory();
+		// URL de l'API GitHub avec la branche (facultatif : ?sha=develop)
+		$api_url = 'https://api.github.com/repos/20h20/edup/commits?sha=develop';
 	
-		if (!is_dir($git_dir . '/.git')) {
-			echo '<p>Répertoire Git non trouvé.</p>';
+		// Appel à l'API GitHub via wp_remote_get
+		$response = wp_remote_get($api_url, [
+			'headers' => [
+				'User-Agent' => 'WordPress-GitHub-Dashboard',
+			],
+		]);
+	
+		if (is_wp_error($response)) {
+			echo '<p>Erreur lors de la récupération des commits.</p>';
 			return;
 		}
 	
-		// Format : hash|auteur|message|date_relative
-		$command = 'cd ' . escapeshellarg($git_dir) . ' && git log -n 5 --pretty=format:"%h|%an|%s|%cr" 2>&1';
-		$output = shell_exec($command);
-	
-		if (!$output) {
-			echo '<p>Impossible de récupérer les commits Git. Assure-toi que PHP peut exécuter les commandes shell et que Git est installé.</p>';
-		} else {
-			$commits = explode("\n", trim($output));
-	
-			echo '<ul>';
-	
-			foreach ($commits as $commit) {
-				list($hash, $author, $message, $relative_date) = explode('|', $commit);
-				echo '<li>';
-				echo '<span class="cbo-gitid">Identifiant de la modification : <code>' . esc_html($hash) . '</code></span><br>';
-				echo '<strong class="cbo-gittitle">' . esc_html($message) . ' <em> (' . esc_html($relative_date) . ')</em></strong><br>';
-				echo '</li>';
-			}
-			echo '</ul>';
+		$code = wp_remote_retrieve_response_code($response);
+		if ($code !== 200) {
+			echo '<p>Erreur HTTP ' . esc_html($code) . ' reçue depuis GitHub.</p>';
+			return;
 		}
+	
+		$body = wp_remote_retrieve_body($response);
+		$commits = json_decode($body, true);
+	
+		if (!is_array($commits)) {
+			echo '<p>Erreur dans les données du commit.</p>';
+			return;
+		}
+	
+		echo '<ul>';
+		foreach (array_slice($commits, 0, 5) as $commit) {
+			if (!isset($commit['sha'], $commit['commit']['message'], $commit['commit']['author']['date'])) {
+				continue;
+			}
+	
+			$sha = substr($commit['sha'], 0, 7);
+			$message = $commit['commit']['message'];
+			$date = date('d/m/Y H:i', strtotime($commit['commit']['author']['date']));
+			$url = $commit['html_url'];
+	
+			echo '<li>';
+			echo '<em class="cbo-gitdate">Le ' . esc_html($date) . '</em>';
+			echo '<span class="cbo-gitid">Identifiant : <code>' . esc_html($sha) . '</code></span><br>';
+			echo '<strong class="cbo-gittitle">' . esc_html($message) . '</strong><br>';
+			echo '</li>';
+		}
+		echo '</ul>';
 	}
+	
+	
 ?>
