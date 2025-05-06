@@ -1,0 +1,102 @@
+/* -------------------------------
+ACCORDION PICTURE COMPONENT
+------------------------------- */
+.cbo-accordionpicture{
+  background: $colorlightgrey;
+
+  .accordionpicture-title{
+    margin-bottom: 3.125rem;
+    text-align: center;
+  }
+  .accordionpicture-box{
+    .box-picture{
+      margin-bottom: 3.125rem;
+      padding-bottom: 60%;
+      border-radius: $borderbig;
+      overflow: hidden;
+    }
+    .accordionpicture-list{
+      margin: -1.875rem 0;
+
+      .list-el{
+        padding-bottom: 1.875rem;
+        border-bottom: 0.0625rem solid rgba($colorbluedark, .1);
+        margin: 1.875rem 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+  
+        .el-title{
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 0.625rem;
+
+          i{
+            background: $colorbluedark;
+            color: $colorwhite;
+            border-radius: 99rem;
+            min-width: 2.5rem;
+            height: 2.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.125rem;
+            margin-left: 0.625rem;
+            transition: all .4s;
+          }
+        }
+        .el-text{
+          color: $colorbluedark;
+          font-size: 0.875rem;
+          line-height: 1.125rem;
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+  .cbo-accordionpicture{
+    .accordionpicture-box{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .box-picture{
+        margin-bottom: 0;
+        padding-bottom: 0%;
+        width: 48%;
+      }
+      .accordionpicture-list{
+        width: 48%;
+      }
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+  .cbo-accordionpicture{
+    .accordionpicture-box{
+      .box-picture{
+        width: 40%;
+      }
+      .accordionpicture-list{
+        .list-el{
+          .el-title{
+            i{
+              &:hover{
+                background: $colororange;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

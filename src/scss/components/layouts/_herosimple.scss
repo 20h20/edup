@@ -1,0 +1,99 @@
+/* -------------------------------
+HERO SIMPLE COMPONENT
+------------------------------- */
+.cbo-herosimple{
+    overflow: hidden;
+    position: relative;
+
+    .herosimple-inner.cbo-container{
+        margin: 9.375rem auto;
+    }
+    .herosimple-picture{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        animation: heropicturescale 2s ease forwards;
+
+        @keyframes heropicturescale {
+            from {
+                transform: scale(1.3);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        &:after{
+            content: '';
+            background: rgba($colorbluedark, .5);
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    }
+    .herosimple-content{
+        text-align: center;
+        color:$colorwhite;
+
+        .herosimple-title{
+            margin: 0 auto;
+            max-width: 59.375rem;
+        }
+        .herosimple-chapo{
+            max-width: 59.375rem;
+            margin: 3.125rem auto 0 auto;
+        }
+        .herosimple-buttons{
+            margin-top: 2.25rem;
+
+            .cbo-button{
+                min-width: 15.625rem;
+                margin: 0 auto;
+
+                &.button--white{
+                    margin-top: 0.625rem;
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+    .cbo-herosimple{
+        .herosimple-content{
+            .herosimple-buttons{
+                display: flex;
+                justify-content: center;
+
+                .cbo-button{
+                    width: inherit;
+                    margin: 0;
+
+                    &.button--white{
+                        margin: 0 0 0 1.25rem;
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+    .cbo-herosimple{
+        .herosimple-inner.cbo-container{
+            margin: 12.5rem auto;
+        }
+        .herosimple-content{
+            .herosimple-chapo{
+                margin-top: 6.25rem;
+            }
+        }
+    }
+}

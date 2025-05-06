@@ -1,0 +1,124 @@
+/* -------------------------------
+CLIENTS COMPONENT
+------------------------------- */
+.cbo-clients{
+    .clients-title{
+        margin-bottom: 3.125rem;
+        text-align: center;
+        padding: 0 1.25rem;
+    }
+    .clients-inner.cbo-container{
+        margin-left: 0;
+        margin-right: 0;
+        overflow: hidden;
+        max-width: inherit;
+    }
+    .clients-list{
+        &:not(.slick-slider){
+            overflow: hidden;
+            display: flex;
+
+            .list-el{
+                width: 100%;
+                min-width: 100%;
+                height: 3.75rem;
+                margin: 0 0.625rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .el-inner{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0 0.625rem;
+                    height: 100%;
+
+                    img{
+                        position: relative;
+                    }
+                }
+            }
+        }
+        .slick-list{
+            height: 5rem;
+            overflow: visible;
+
+            .slick-track{
+                height: 100%;
+
+                .slick-slide{
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .list-el{
+                        height: 100%;
+                        opacity: 1;
+                        transition: all .4s;
+
+                        .el-inner{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 100%;
+                            height: 100%;
+                            padding: 0 0.9375rem;
+
+                            img{
+                                position: relative;
+                            }
+                        }
+                        &:hover{
+                            opacity: .6;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width:$screen-md-min) {
+    .cbo-clients{
+        .clients-list{
+            &:not(.slick-slider){
+                .list-el{
+                    width: 33.3333%;
+                    min-width: 33.3333%;
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width:$screen-lg-min) {
+    .cbo-clients{
+        .clients-list{
+            &:not(.slick-slider){
+                .list-el{
+                    width: 25%;
+                    min-width: 25%;
+                }
+            }
+            .slick-list{
+                height: 6.25rem;
+
+                .slick-track{
+                    .slick-slide{
+                        .list-el{
+                            .el-inner{
+                                padding: 0 2.1875rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

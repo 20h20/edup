@@ -1,0 +1,59 @@
+/* -------------------------------
+NEWS PAGES COMPONENT
+------------------------------- */
+.news--single{
+    .single-hero{
+        text-align: center;
+
+        .hero-inner.cbo-container{
+            margin-bottom: 0;
+        }
+        .hero-title{
+            margin-bottom: 1.875rem;
+        }
+        .infomations-list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 0 -0.625rem;
+
+            .list-el{
+                margin: 0 0.625rem;
+
+                .tag{
+                    margin: 0 0.3125rem;
+                }
+            }
+        }
+        .hero-picture{
+            margin-top: 3.75rem;
+            border-radius: $borderbig;
+            overflow: hidden;
+            padding-bottom: 30%;
+            min-height: 18.75rem;
+        }
+    }
+	.cbo-relation{
+		.relation-button{
+			margin-top: 3.125rem;
+			text-align: center;
+		}
+	}
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min) {
+    .news--single{
+        .single-hero{
+            .hero-title{
+                font-size: 3.125rem;
+                line-height: 3.75rem;
+                margin-bottom: 2.5rem;
+            }
+            .hero-picture{
+                margin-top: 6.25rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,278 @@
+/* -------------------------------
+CONTACT COMPONENT
+------------------------------- */
+.cbo-contact{
+	.content-title{
+		text-align: center;
+	}
+	.contact-box{
+		.box-informations{
+			background: $colorbluedark;
+			border-radius: $borderbig $borderbig 0 0;
+			padding: 2.5rem 1.25rem;
+			color: $colorwhite;
+
+			.informations-title{
+				margin-bottom: 1.875rem;
+			}
+			.informations-list{
+				.list-el{
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					margin: 1.25rem 0;
+					font-weight: 500;
+
+					i{
+						width: 2.5rem;
+						height: 2.5rem;
+						border-radius: $bordersmall;
+						font-size: 1.25rem;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						margin-right: 0.875rem;
+						color: $colorwhite;
+					}
+					&.el--mail{
+						i{
+							background: $colororange;
+						}
+					}
+					&.el--phone{
+						i{
+							background: $colororange;
+						}
+					}
+					&.el--address{
+						i{
+							background: $colororange;
+						}
+					}
+				}
+			}
+			.socials-list{
+				margin-top: 1.875rem;
+				display: flex;
+				flex-wrap: wrap;
+
+				.socials-title{
+					width: 100%;
+					margin-bottom: 0.5rem;
+					font-weight: 500;
+				}
+				.list-el{
+					color: $colorwhite;
+					font-size: 1.25rem;
+					margin-right: 0.625rem;
+				}
+			}
+		}
+		.cbo-form{
+			background: $colorlightgrey;
+			border-radius: 0 0 $borderbig $borderbig;
+			padding: 2.5rem 1.25rem;
+
+			.cbo-step{
+				.form-title{
+					text-align: center;
+				}
+				.step-list{
+					margin-top: 1.875rem;
+
+					&.list--first{
+						margin-top: 0;
+					}
+					.form-subtitle{
+						font-size: 1.25rem;
+						line-height: 1.625rem;
+						font-weight: 500;
+						margin-bottom: 1.875rem;
+						display: flex;
+						align-items: center;
+						width: 100%;
+
+						.title-step{
+							width: 1.875rem;
+							height: 1.875rem;
+							font-size: 1.125rem;
+							border-radius: 99rem;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							color: $colorwhite;
+							margin-right: 0.875rem;
+
+							&.step--purple{
+								background: $colororange;
+							}
+							&.step--green{
+								background: $colorsuccess;
+							}
+						}
+					}
+				}
+				.input-container{
+					width: 100%;
+
+					.cbo-button,
+					input[type="submit"]{
+						width: 100%;
+					}
+					.cbo-button{
+						opacity: 0.3;
+						cursor: not-allowed;
+
+						&.button-active{
+							opacity: 1;
+							cursor: pointer;
+						}
+					}
+					input[type="submit"]{
+						margin-top: 0.625rem;
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+XSMALL SCREENS
+------------------------------- */
+@media (min-width: 31.25rem) {
+	.cbo-contact{
+		.contact-box{
+			.cbo-form {
+				.cbo-step {
+					.step-list{
+						.form-subtitle{
+							padding: 0 0.625rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min) {
+	.cbo-contact{
+		.contact-box{
+			.cbo-form{
+				.cbo-step{
+					.step-list{
+						.form-subtitle{
+							font-size: 1.5rem;
+							line-height: 1.875rem;
+						}
+					}
+					.input-container{
+						display: flex;
+						justify-content: space-between;
+
+						&.container--center{
+							justify-content: center;
+						}
+						.cbo-button,
+						input[type="submit"]{
+							width: fit-content;
+						}
+						input[type="submit"]{
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min) {
+	.cbo-contact{
+		.contact-box{
+			display: flex;
+			flex-wrap: wrap;
+
+			.box-informations{
+				width: 40%;
+				border-radius: $borderbig 0 0 $borderbig;
+				padding: 2.5rem;
+
+				.socials-list {
+					.list-el{
+						transition: all .4s;
+
+						&:hover{
+							color: $colororange;
+						}
+					}
+				}
+			}
+			.cbo-form{
+				width: 60%;
+				border-radius: 0 $borderbig $borderbig 0;
+				padding: 2.5rem;
+
+				.cbo-step{
+					.input-container{
+						margin-top: 1.875rem;
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min) {
+	.cbo-contact{
+		.content-title{
+			margin-bottom: 6.25rem;
+		}
+		.contact-box{
+			.box-informations{
+				width: 33.333%;
+				padding: 3.75rem 2.5rem;
+
+				.socials-list{
+					margin-top: 3.75rem;
+
+					.list-el {
+						font-size: 1.875rem;
+					}
+				}
+			}
+			.cbo-form{
+				padding: 3.75rem;
+			}
+		}
+	}
+}
+/* -------------------------------
+XLARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-xl-min) {
+	.cbo-contact{
+		.contact-box{
+			.box-informations{
+				padding: 3.75rem;
+
+				.informations-list{
+					.list-el{
+						i{
+							width: 3.75rem;
+							height: 3.75rem;
+							font-size: 1.875rem;
+							margin-right: 1.875rem;
+						}
+					}
+				}
+			}
+		}
+	}
+}

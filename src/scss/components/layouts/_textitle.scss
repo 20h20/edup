@@ -1,0 +1,34 @@
+/* -------------------------------
+TEXT TITLE COMPONENT
+------------------------------- */
+.cbo-textitle {
+	.textitle-content{
+		margin: 0 auto;
+		max-width: 40.625rem;
+
+		.content-title {
+			margin-bottom: 3.125rem;
+		}
+	}
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min) {
+	.cbo-textitle {
+		.textitle-content{
+			margin: 0;
+			max-width: inherit;
+			display: flex;
+			justify-content: space-between;
+
+			.content-title{
+				margin-bottom: 0;
+				width: 44%;
+			}
+			.content-text{
+				width: 50%;
+			}
+		}
+	}
+}

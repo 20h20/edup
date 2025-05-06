@@ -1,0 +1,78 @@
+/* -------------------------------
+TEAM COMPONENT
+------------------------------- */
+.cbo-team{
+    position: relative;
+
+    .team-introduction{
+        .introduction-title{
+            margin-bottom: 1.25rem;
+        }
+    }
+    .team-list{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2.5rem -0.625rem -0.625rem -0.625rem;
+
+        .list-el{
+            width: 50%;
+
+            .el-inner{
+                text-align: center;
+                padding:0.625rem;
+
+                .inner-picture{
+                    border-radius: $bordersmall;
+                    width: 100%;
+                    padding-bottom: 130%;
+                    overflow: hidden;
+                    margin-bottom: 1.25rem;
+                }
+                .el-name{
+                    font-weight: bold;
+                }
+                .el-function{
+                    margin-top: 0.25rem;
+                    color: rgba($colorbluedark, .6);
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width:$screen-sm-min) {
+    .cbo-team{
+        .team-introduction{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .introduction-title{
+                width: 44%;
+                margin-bottom: 0;
+            }
+            .introduction-chapo{
+                width: 50%;
+            }
+        }
+        .team-list{
+            .list-el{
+                width: 33.3333%;
+            }
+        }
+    }    
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width:$screen-lg-min) {
+    .cbo-team{
+        .team-list{
+            .list-el{
+                width: 25%;
+            }
+        }
+    } 
+}

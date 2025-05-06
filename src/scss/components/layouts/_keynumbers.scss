@@ -1,0 +1,69 @@
+/* -------------------------------
+KEYNUMBERS COMPONENT
+------------------------------- */
+.cbo-keynumbers{
+  .keynumbers-list{
+    .list-el{
+      margin: 1.25rem 0;
+
+      .el-inner{
+        text-align: center;
+
+        .inner-number{
+          color: $colororange;
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+  .cbo-keynumbers{
+    .keynumbers-list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: -0.625rem;
+  
+      .list-el{
+        width: 50%;
+        margin: 0;
+        padding: 0.625rem;
+      }
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+  .cbo-keynumbers{
+    .keynumbers-list{
+      .list-el{
+        width: 33.333333%;
+
+        .el-inner{
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+  .cbo-keynumbers{
+    .keynumbers-list{
+      .list-el{
+        min-height: 17.5rem;
+        width: 25%;
+      }
+    }
+  }
+}

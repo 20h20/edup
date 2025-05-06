@@ -1,0 +1,129 @@
+/* -------------------------------
+CALL TO ACTION COMPONENT
+------------------------------- */
+.cbo-accordion{
+  background: $colorlightgrey;
+
+  .accordion-box{
+    .accordion-title{
+      margin-bottom: 3.125rem;
+    }
+    .accordion-subtitle{
+      margin-bottom: 1.25rem;
+    }
+    .accordion-list{
+      margin-top: 3.125rem;
+
+      .list-el{
+        padding-bottom: 1.875rem;
+        border-bottom: 0.0625rem solid rgba($colorbluedark, .1);
+        margin: 1.875rem 0;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+  
+        .el-title{
+          font-size: 1.25rem;
+          line-height: 1.25rem;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          cursor: pointer;
+          font-weight: 500;
+          transition:.4s $easeinout;
+  
+          i{
+            color: $colorwhite;
+            transition:.4s $easeinout;
+            font-size: 1rem;
+            width: 3.125rem;
+            min-width: 3.125rem;
+            height: 3.125rem;
+            border-radius: 99rem;
+            box-shadow: 0rem 0rem 0rem 3.125rem $colororange inset;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        }
+        .el-content{
+          overflow: hidden;
+          height: 0;
+          transition:.4s $easeinout;
+        }
+        &.el--open{
+          .el-title{
+            color: $colororange;
+
+            i{
+              box-shadow: 0rem 0rem 0rem 3.125rem $colorbluedark inset;
+              transform:rotate(45deg);
+            }
+          }
+          .el-content{
+            padding-top: 1.875rem;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+  .cbo-accordion{
+    .accordion-box{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+
+      .box-content{
+        margin-bottom: 0;
+        width: 40%;
+        position: sticky;
+        top: 6.875rem;
+      }
+      .accordion-list{
+        width: 50%;
+      }
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+  .cbo-accordion{
+    .accordion-box{
+      .box-content{
+        height: fit-content;
+      }
+      .accordion-list{
+        .list-el{
+          .el-title{
+            transition: all .4s;
+
+            i{
+              opacity: 1;
+              transition: all .4s;
+            }
+          }
+          &:hover{
+            .el-title{
+              color: $colororange;
+
+              i{
+                box-shadow: 0rem 0rem 0rem 3.125rem $colorbluedark inset;
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

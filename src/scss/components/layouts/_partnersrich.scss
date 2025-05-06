@@ -1,0 +1,145 @@
+/* -------------------------------
+PARTNERS RICH COMPONENT
+------------------------------- */
+.cbo-partnersrich{
+    position: relative;
+    background: $colorlightgrey;
+
+    .partnersrich-introduction{
+        .introduction-title{
+            margin-bottom: 1.25rem;
+        }
+    }
+    .partnersrich-list{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 1.875rem -0.625rem -1.25rem -0.625rem;
+
+        .list-el{
+            width: 50%;
+
+            .el-inner{
+                text-align: center;
+                padding: 1.25rem 0.625rem;
+
+                .inner-picture{
+                    background: $colorwhite;
+                    border-radius: 99rem;
+                    width: 9.375rem;
+                    height: 9.375rem;
+                    overflow: hidden;
+                    margin: 0 auto 1.25rem auto;
+                    padding: 1.875rem;
+
+                    img{
+                        position: relative;
+                    }
+                }
+                .el-title{
+                    margin-bottom: 1rem;
+                }
+                .el-description{
+                    margin-top: 0.25rem;
+                    color: rgba($colorbluedark, .6);
+                }
+                .el-link{
+                    margin-top: 1.25rem;
+                    display: block;
+                    color: $colorbluedark;
+
+                    i{
+                        margin-left: 0.625rem;
+                        color: $colororange;
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width:$screen-sm-min) {
+    .cbo-partnersrich{
+        .partnersrich-introduction{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            .introduction-title{
+                width: 44%;
+                margin-bottom: 0;
+            }
+            .introduction-chapo{
+                width: 50%;
+            }
+        }
+        .partnersrich-list{
+            .list-el{
+                width: 33.3333%;
+            }
+        }
+    }    
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width:$screen-lg-min) {
+    .cbo-partnersrich{
+        .partnersrich-list{
+            .list-el{
+                width: 25%;
+
+                .el-inner{
+                    .el-link{
+                        margin-top: 1.25rem;
+                        display: block;
+                        color: $colorbluedark;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        text-align: center;
+                        transition: all .4s;
+
+                        i{
+                            margin-left: 1.25rem;
+                            position: relative;
+                            transition: all .4s;
+
+                            &:before{
+                                z-index: 2;
+                                position: relative;
+                            }
+                            &:after{
+                                content: '';
+                                background: rgba($colororange, 0);
+                                border-radius: 99rem;
+                                min-width: 2.5rem;
+                                height: 2.5rem;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                position: absolute;
+                                top: -0.75rem;
+                                left: -0.6875rem;
+                                z-index: 1;
+                                transition: all .4s;
+                            }
+                        }
+                        &:hover{
+                            color: $colororange;
+
+                            i{
+                                color: $colorwhite;
+
+                                &:after{
+                                    background: rgba($colororange, 1);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

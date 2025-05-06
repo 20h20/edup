@@ -1,0 +1,128 @@
+/* -------------------------------
+FOOTER COMPONENT
+------------------------------- */
+footer{
+   background: $colorbluedark;
+   color: $colorwhite;
+
+   .footer-inner.cbo-container{
+      padding-top: 78px;
+      padding-bottom: 50px;
+   }
+   a{
+      color: $colorwhite;
+   }
+   .footer-identity{
+      .identity-logo{
+         display: block;
+         width: 102px;
+         height: 61px;
+         margin: 0 auto 30px auto;
+      }
+      .identity-description{
+         font-weight: 400;
+      }
+   }
+   .footer-infos{
+      margin-top: 30px;
+
+      .infos-address{
+         margin-bottom: 30px;
+      }
+      .infos-mail{
+         display: block;
+      }
+      .infos-phone{
+         display: block;
+      }
+   }
+   .footer-bottom{
+      margin-top: 60px;
+      padding-top: 30px;
+      border-top: 1px solid $colorwhite;
+
+      .bottom-nav{
+         ul{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            li{
+               margin: 0 5px;
+            }
+         }
+      }
+      .bottom-social{
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         position: relative;
+         margin-top: 30px;
+
+         .list-el{
+            font-size: 24px;
+            margin: 0 10px;
+         }
+      }
+   }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+   footer{
+      .footer-inner{
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: space-between;
+      }
+      .footer-identity{
+         width: fit-content;
+         max-width: 520px;
+
+         .identity-logo{
+            margin: 0 0 30px 0;
+         }
+      }
+      .footer-infos{
+         width: fit-content;
+         max-width: 50%;
+         margin-top: 0;
+      }
+      .footer-bottom{
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+   
+         .bottom-nav{
+            ul{
+               li{
+                  margin: 0 10px 0 0;
+
+                  a{
+                     transition: all .4s;
+                  }
+                  &:hover{
+                     a{
+                        opacity: 0.6;
+                     }
+                  }
+               }
+            }
+         }
+         .bottom-social{
+            margin-top: 0;
+
+            .list-el{
+               margin: 0 0 0 10px;
+               transition: all .4s;
+
+               &:hover{
+                  opacity: 0.6;
+               }
+            }
+         }
+      }
+   }
+}

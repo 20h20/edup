@@ -1,0 +1,217 @@
+/* -------------------------------
+TYPOGRAPHY
+------------------------------- */
+@font-face {
+	font-family: 'Libre Franklin';
+	src: url('../fonts/LibreFranklin-Bold.woff2') format('woff2'),
+	url('../fonts/LibreFranklin-Bold.woff') format('woff');
+	font-weight: bold;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Libre Franklin';
+	src: url('../fonts/LibreFranklin-Regular.woff2') format('woff2'),
+	url('../fonts/LibreFranklin-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Libre Franklin';
+	src: url('../fonts/LibreFranklin-Medium.woff2') format('woff2'),
+	url('../fonts/LibreFranklin-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Libre Franklin';
+	src: url('../fonts/LibreFranklin-SemiBold.woff2') format('woff2'),
+	url('../fonts/LibreFranklin-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+a{
+	text-decoration: none;
+}
+ul{
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+h1,h2,h3,h4,h5,h6{
+	margin: 0;
+}
+.title--orange{
+	color: $colororange;
+}
+.cbo-title-1{
+	font-size: 2.1875rem;
+	line-height: 2.25rem;
+	font-weight: 700;
+}
+.cbo-title-2,
+h2,
+.cbo-title-2 h1, .cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
+	font-size: 1.875rem;
+	line-height: 1.9375rem;
+	font-weight: 700;
+}
+.cbo-title-3{
+	font-size: 1.4375rem;
+	line-height: 1.6875rem;
+	font-weight: 600;
+}
+.cbo-title-4{
+	font-size: 1.25rem;
+	line-height: 1.5rem;
+	font-weight: 600;
+}
+.title--icon {
+	display: flex;
+	align-items: center;
+
+	.icon-picture{
+		margin-left: 1rem;
+		min-width: 2.5rem;
+		height: 2.5rem;
+	}
+}
+.cbo-small{
+	font-size: 0.75rem;
+	line-height: 0.9375rem;
+}
+.cbo-chapo{
+	font-size: 1.375rem;
+	line-height: 1.5rem;
+	font-weight: 500;
+}
+.cbo-cms{
+	p{
+		margin: 0.875rem 0;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+		&:first-child{
+			margin-top: 0;
+		}
+	}
+	.cbo-button{
+		margin-top: 1.25rem;
+	}
+	strong, b{
+		font-weight: bold;
+	}
+	h1,h2,h3,h4{
+		margin: 3.75rem 0 1.875rem 0;
+
+		&:first-child{
+			margin-top: 0;
+		}
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	ul{
+		margin: 1.875rem 0;
+		padding-left: 0.625rem;
+
+		li{
+			position: relative;
+			padding:0 0 0 1.125rem;
+			margin-bottom: 0.875rem;
+
+			&:before{
+				content: '';
+				width: 0.25rem;
+				height: 0.25rem;
+				border-radius: 99rem;
+				background: $colorbluedark;
+				position: absolute;
+				left: 0;
+				top: 0.625rem;
+			}
+			&:last-child{
+				padding-bottom: 0;
+			}
+		}
+	}
+	ol{
+		padding: 0 0 0 1.25rem;
+
+		li{
+			padding:0 0 0 0.625rem;
+			margin-bottom: 0.875rem;
+			
+			&::marker{
+				color: $colorbluedark;
+			}
+		}
+	}
+	a{
+		&:not(.cbo-button){
+			color: $colorbluedark;
+			text-decoration: underline;
+			transition: all .4s;
+
+			&:hover{
+				opacity: 0.7;
+			}
+		}
+	}
+	hr{
+		border: 0;
+		border-bottom: 1px solid rgba($colorbluedark, .1);
+	}
+	img{
+		background: $colorwhite;
+		width: 100%;
+		height: auto;
+		margin: 3.125rem auto;
+		display: block;
+		border-radius: 0.625rem;
+		overflow: hidden;
+	}
+	iframe{
+		margin: 3.125rem auto;
+		display: block;
+		max-width: 100%;
+	}
+	blockquote{
+		margin: 3.125rem auto;
+		padding: 1.25rem;
+		max-width: 56.25rem;
+		background: rgba($colorbluedark, .1);
+		border: 1px solid rgba($colorbluedark, .3);
+		border-left: 0.1875rem solid rgba($colorbluedark, 1);
+		border-radius: $bordersmall;
+	}
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+	.cbo-title-1{
+		font-size: 3.4375rem;
+		line-height: 4.125rem;
+	}
+	.cbo-title-2,
+	h2,
+	.cbo-title-2 h1, .cbo-title-2 h2, .cbo-title-2 h3, .cbo-title-2 h4, .cbo-title-2 h5, .cbo-title-2 h6, .cbo-title-2 p{
+		font-size: 3.75rem;
+		line-height: 4.5rem;
+	}
+	.title--icon {	
+		.icon-picture{
+			min-width: 4.375rem;
+			height: 4.375rem;
+		}
+	}
+	.cbo-chapo{
+		font-size: 1.5625rem;
+		line-height: 1.875rem;
+	}
+}

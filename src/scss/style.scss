@@ -1,0 +1,75 @@
+/******************************************************************
+Author: Julien B.
+******************************************************************/
+
+/*********************
+IMPORTING PARTIALS
+*********************/
+@import "partials/variables";
+@import "partials/icons";
+
+/*********************
+STUCTURE COMPONENTS
+*********************/  
+@import "components/structure/base";
+@import "components/structure/header";
+@import "components/structure/footer";
+
+/*********************
+LAYOUTS COMPONENTS
+*********************/
+@import "components/layouts/accordion";
+@import "components/layouts/accordionpicture";
+@import "components/layouts/blocs";
+@import "components/layouts/calltoaction";
+@import "components/layouts/calltoactionmultiple";
+@import "components/layouts/clients";
+@import "components/layouts/contact";
+@import "components/layouts/gallery";
+@import "components/layouts/herorich";
+@import "components/layouts/herosimple";
+@import "components/layouts/keynumbers";
+@import "components/layouts/partners";
+@import "components/layouts/partnersrich";
+@import "components/layouts/relation";
+@import "components/layouts/slidetextpicture";
+@import "components/layouts/team";
+@import "components/layouts/text";
+@import "components/layouts/textpicture";
+@import "components/layouts/textitle";
+
+/*********************
+MICRO COMPONENTS
+*********************/
+@import "components/micros/breadcrumb";
+@import "components/micros/blocarticle";
+@import "components/micros/blocase";
+@import "components/micros/buttons";
+@import "components/micros/connexion";
+@import "components/micros/container";
+@import "components/micros/filters";
+@import "components/micros/modale";
+@import "components/micros/pagination";
+@import "components/micros/pictures";
+@import "components/micros/share";
+@import "components/micros/slick";
+@import "components/micros/typography";
+
+/*********************
+PAGES COMPONENTS
+*********************/
+@import "components/pages/news";
+
+/*********************
+BACK END REMOVE
+*********************/
+.cbo-main{
+    @import "partials/_animations";
+}
+.cbo-main,
+.acfe-flexible-placeholder{
+    @import "components/micros/form";
+}
+.wp-admin{
+    @import "components/micros/back-office";
+}

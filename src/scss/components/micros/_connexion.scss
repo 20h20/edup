@@ -1,0 +1,39 @@
+/* -------------------------------
+CONNEXION COMPONENT
+------------------------------- */	
+.login{
+	padding: 0;
+	display: flex;
+	background:$colororange;
+
+	a,
+	label{
+		color:$colorbluedark;
+	}
+	h1{
+		a{
+			background: url("../img/logo-edup-white.svg") no-repeat center;
+			background-size: contain;
+			width: 12.5rem;
+		}
+	}
+	form .input{
+		border:0.0625rem solid $colororange;
+	}
+	.button.button-large{
+		background: $colororange;
+		border: 0rem;
+		margin-top: 1.875rem;
+		width: 100%;
+	}
+	form .input{
+		border-radius: 0rem;
+	}
+	.language-switcher{
+		display: none;
+	}
+	#backtoblog a,
+	#nav a {
+		color: $colorwhite;
+	}
+}

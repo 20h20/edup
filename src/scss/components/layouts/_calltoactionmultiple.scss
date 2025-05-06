@@ -1,0 +1,158 @@
+/* -------------------------------
+CALL TO ACTION MULTIPLE COMPONENT
+------------------------------- */
+.cbo-calltoactionmultiple{
+  background: $colorlightgrey;
+
+  .calltoactionmultiple-box{
+    .calltoactionmultiple-title{
+      margin-bottom: 3.125rem;
+    }
+    .calltoactionmultiple-list{
+      .list-el{
+        display: block;
+        margin: 1.25rem 0;
+
+        .el-inner{
+          display: block;
+          padding-bottom: 1.25rem;
+          border-bottom: 0.0625rem solid rgba($colorbluedark, .1);
+  
+          .inner-title{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: $colororange;
+            margin-bottom: 0.625rem;
+
+            i{
+              background: $colororange;
+              color: $colorwhite;
+              border-radius: 99rem;
+              min-width: 2.5rem;
+              height: 2.5rem;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-size: 1.125rem;
+              margin-left: 0.625rem;
+            }
+          }
+          .inner-text{
+            color: $colorbluedark;
+            font-size: 0.875rem;
+            line-height: 1.125rem;
+          }
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+  .cbo-calltoactionmultiple{
+    .calltoactionmultiple-box{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+
+      .calltoactionmultiple-title{
+        margin-bottom: 0;
+        width: 40%;
+        position: sticky;
+        top: 6.875rem;
+      }
+      .calltoactionmultiple-list{
+        width: 58%;
+      }
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+  .cbo-calltoactionmultiple{
+    .calltoactionmultiple-box{
+      .calltoactionmultiple-title{
+        height: fit-content;
+      }
+      .calltoactionmultiple-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .list-el{
+          width: 50%;
+          padding: 0 0.625rem;
+
+          .el-inner{
+            height: 100%;
+
+            .inner-title{
+              i{
+                background: none;
+                position: relative;
+                color: $colororange;
+                transition: all .4s;
+
+                &:before{
+                  z-index: 2;
+                }
+                &:after{
+                  content: '';
+                  background: $colororange;
+                  border-radius: 99rem;
+                  min-width: 2.5rem;
+                  height: 2.5rem;
+                  transform: scale(0);
+                  position: absolute;
+                  top: 0;
+                  left: 0;
+                  transition: all .4s;
+                }
+              }
+            }
+            .inner-text{
+              opacity: 1;
+              transition: all .4s;
+            }
+          }
+          &:hover{
+            .el-inner{
+              .inner-title{
+                i{
+                  color: $colorwhite;
+  
+                  &:after{
+                    transform: scale(1);
+                  }
+                }
+              }
+              .inner-text{
+                opacity: .5;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+  .cbo-calltoactionmultiple{
+    .calltoactionmultiple-box{
+      .calltoactionmultiple-list{
+        .list-el{
+          padding: 0 1.25rem;
+        }
+      }
+    }
+  }
+}

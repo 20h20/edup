@@ -1,0 +1,73 @@
+/* -------------------------------
+HERO COLOR COMPONENT
+------------------------------- */
+.cbo-herorich{
+    background: rgba($colorbluedark, .3);
+    text-align: center;
+
+    .herorich-picture{
+        margin: 0 auto 1.875rem auto;
+        max-width: 31.25rem;
+
+        img{
+            position: relative;
+        }
+    }
+    .herorich-content{
+        .herorich-cat{
+            margin-bottom: 0.875rem;
+
+            .list-el{
+                background: $colorwhite;
+                border-radius: 0.3125rem;
+                border: 0.0625rem solid rgba($colorbluedark, .2);
+                display: inline-flex;
+                height: 1.875rem;
+                align-items: center;
+                padding: 0 0.5rem;
+            }
+        }
+        .herorich-desc{
+            margin-top: 2.5rem;
+        }
+        .herorich-button{
+            margin-top: 1.875rem;
+        }
+    }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+    .cbo-herorich{
+        text-align: left;
+
+        .herorich-inner{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .herorich-picture{
+            margin: 0;
+            max-width: inherit;
+            width: 40%;
+        }
+        .herorich-content{
+            width: 50%;
+        }
+    }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+    .cbo-herorich{
+        .herorich-picture{
+            width: 35%;
+        }
+        .herorich-content{
+            width: 60%;
+        }
+    }
+}

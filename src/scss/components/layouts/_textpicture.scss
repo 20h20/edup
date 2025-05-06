@@ -1,0 +1,76 @@
+/* -------------------------------
+TEXT PICTURE COMPONENT
+------------------------------- */
+.cbo-textpicture {
+  .textpicture-picture{
+    max-width: 40.625rem;
+    margin: 0 auto 1.25rem auto;
+    border-radius: $borderbig;
+    overflow: hidden;
+
+    &.picture--nosvg{
+      padding-bottom: 60%;
+    }
+    &.cbo-picture-contain{
+      border-radius: 0;
+    }
+  }
+  .textpicture-content {
+    max-width: 40.625rem;
+    margin: 0 auto;
+
+    .content-title{
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min) {
+  .cbo-textpicture {
+    position: relative;
+
+    .textpicture-inner{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .textpicture-picture{
+      width: 45%;
+      max-width: inherit;
+      margin: 0;
+      min-height: 300px;
+
+      &.picture--nosvg{
+        padding-bottom: 0%;
+      }
+    }
+    .textpicture-content {
+      width: 50%;
+      max-width: inherit;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+    &.textpicture--right {
+      .textpicture-inner{
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min) {
+  .cbo-textpicture {
+    .textpicture-picture{
+      width: 50%;
+    }
+    .textpicture-content {
+      width: 45%;
+    }
+  }
+}

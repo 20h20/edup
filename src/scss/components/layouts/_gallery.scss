@@ -1,0 +1,87 @@
+/* -------------------------------
+GALLERY COMPONENT
+------------------------------- */
+.cbo-gallery{
+  .gallery-inner.cbo-container{
+    overflow: hidden;
+    max-width: 100%;
+  }
+  .gallery-list{
+    &:not(.slick-slider){
+      display: flex;
+      overflow: hidden;
+
+      .list-el{
+        width: 100%;
+        min-width: 100%;
+        margin: 0 0.625rem;
+      }
+    }
+    .slick-list{
+      overflow: visible;
+
+      .slick-track{
+        margin: 0 -0.625rem;
+
+        .slick-slide{
+          margin: 0 0.625rem;
+        }
+      }
+    }
+    .list-el{
+      .el-inner {
+        padding-bottom: 80%;
+        border-radius: $borderbig;
+        overflow: hidden;
+      }
+    }
+  }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+  .cbo-gallery{
+    .gallery-list{
+      &:not(.slick-slider){
+        .list-el{
+          width: 50%;
+          min-width: 50%;
+        }
+      }
+      .slick-list{
+        width: calc(100% - -1.25rem);
+      }
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+  .cbo-gallery{
+    .gallery-list{
+      &:not(.slick-slider){
+        .list-el{
+          width: 33.33333%;
+          min-width: 33.33333%;
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+  .cbo-gallery{
+    .gallery-list{
+      &:not(.slick-slider){
+        .list-el{
+          width: 25%;
+          min-width: 25%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+/* -------------------------------
+ARTICLE BLOC MICRO COMPONENT
+------------------------------- */
+.articles-list{
+	.list-el{
+		margin: 1.25rem 0;
+
+		.el-inner{
+			color: $colorbluedark;
+			border-radius: $borderbig;
+			overflow: hidden;
+			height: 100%;
+			background: $colorwhite;
+			display: block;
+			box-shadow: 0 0.25rem 3.375rem 0 rgba($colorblack, .1);
+
+			.el-content{
+				display: block;
+				padding: 1.875rem 1.25rem;
+
+				.content-title{
+					margin-bottom: 1.625rem;
+					width: 100%;
+				}
+				.content-link{
+					display: flex;
+					align-items: center;
+					color: $colororange;
+					font-weight: 600;
+
+					i{
+						margin-left: 0.625rem;
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+	.articles-list{
+		display: flex;
+		flex-wrap: wrap;
+		margin: -0.625rem;
+
+		.list-el{
+			margin: 0;
+			padding: 0.625rem;
+			width: 50%;
+		}
+	}
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min) {
+	.articles-list{
+		.list-el{
+			width: 33.3333%;
+
+			.el-inner{	
+				.el-content{
+					.content-title{
+						transition: all .6s
+					}
+					.content-link{
+						padding-left: 0.5rem;
+
+						i{
+							transition: all .6s
+						}
+						&:before{
+							content: '\f102';
+							font-family:"icons";
+							margin: 0 0 0 -1.25rem;
+							opacity: 0;
+							transition: all .6s
+						}
+					}
+				}
+			}
+			&:hover{
+				.el-inner{
+		
+					.el-content{
+						.content-title{
+							color: $colororange;
+						}
+						.content-link{
+							display: flex;
+							align-items: center;
+							color: $colororange;
+							font-weight: 600;
+		
+							i{
+								margin-left: 1.25rem;
+								opacity: 0;
+							}
+							&:before{
+								margin: 0 0.625rem 0 0;
+								opacity: 1;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min) {
+	.articles-list{
+		.list-el{
+			.el-inner {
+				.el-content{
+					padding: 2.5rem 1.875rem;
+				}
+			}
+		}
+	}
+}

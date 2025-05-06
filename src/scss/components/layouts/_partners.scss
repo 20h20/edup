@@ -1,0 +1,102 @@
+/* -------------------------------
+PARTNERS COMPONENT
+------------------------------- */
+.cbo-partners{
+    background: $colororange;
+
+    .partners-list{
+        &:not(.slick-slider){
+            overflow: hidden;
+            display: flex;
+
+            .list-el{
+                .el-inner{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 5rem;
+                    height: 5rem;
+                    border-radius: 99rem;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background: $colorwhite;
+                    padding: 0.625rem;
+
+                    img{
+                        position: relative;
+                    }
+                }
+            }
+        }
+        .slick-list{
+            .slick-track{
+                .slick-slide{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .list-el{
+                        opacity: 1;
+                        transition: all .4s;
+
+                        .el-inner{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 5rem;
+                            height: 5rem;
+                            border-radius: 99rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            background: $colorwhite;
+                            padding: 0.625rem;
+
+                            img{
+                                position: relative;
+                            }
+                        }
+                        &:hover{
+                            opacity: .6;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width:$screen-md-min) {
+    .cbo-partners{
+        .partners-list{
+            &:not(.slick-slider){
+                .list-el{
+                    width: 33.3333%;
+                    min-width: 33.3333%;
+                }
+            }
+        }
+    }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width:$screen-lg-min) {
+    .cbo-partners{
+        .partners-inner.cbo-container{
+            padding-top: 4.375rem;
+            padding-bottom: 4.375rem;
+        }
+        .partners-list{
+            &:not(.slick-slider){
+                .list-el{
+                    width: 25%;
+                    min-width: 25%;
+                }
+            }
+        }
+    }
+}

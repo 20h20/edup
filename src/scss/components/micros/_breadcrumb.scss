@@ -1,0 +1,24 @@
+/* -------------------------------
+BREADCRUMB
+------------------------------- */
+.cbo-breadcrumb{
+	margin: 1.875rem 0 1.875rem -0.5rem;
+	font-size: 0.875rem;
+
+	a{
+		color:$colororange;
+		transition: all .4s;
+		cursor:pointer;
+
+		&:hover{
+			opacity: 0.6;
+		}
+	}
+	.breadcrumb-inner{
+		span{
+			span{
+				margin: 0 0.5rem;
+			}
+		}
+	}
+}

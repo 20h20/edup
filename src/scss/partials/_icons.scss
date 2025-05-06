@@ -1,0 +1,45 @@
+// Custom template
+
+@font-face {
+    font-family:"icons";
+    src: url("../iconfont/icons.eot?8067303d5f344077a585f84456e68ff5");
+    src: url("../iconfont/icons.eot?8067303d5f344077a585f84456e68ff5#iefix") format("embedded-opentype"),
+		url("../iconfont/icons.woff?8067303d5f344077a585f84456e68ff5") format("woff"),
+		url("../iconfont/icons.ttf?8067303d5f344077a585f84456e68ff5") format("truetype"),
+		url("../iconfont/icons.svg?8067303d5f344077a585f84456e68ff5#icons") format("svg");
+    font-weight:normal;
+    font-style:normal;
+    font-display:swap;
+    }
+
+.icon {
+    font-family:"icons";
+    display:inline-block;
+    font-style:normal;
+    speak:none;
+    -webkit-font-smoothing:antialiased;
+    font-size:1em;
+    line-height:1em;
+    vertical-align:baseline;
+    }
+
+// Icons
+.icon--arrow-bottom:before { content:"\f101"; }
+.icon--arrow-next:before { content:"\f102"; }
+.icon--arrow-prev:before { content:"\f103"; }
+.icon--check:before { content:"\f104"; }
+.icon--devis:before { content:"\f105"; }
+.icon--home:before { content:"\f106"; }
+.icon--instagram:before { content:"\f107"; }
+.icon--leads:before { content:"\f108"; }
+.icon--linkedin:before { content:"\f109"; }
+.icon--logo-jb:before { content:"\f10a"; }
+.icon--mail:before { content:"\f10b"; }
+.icon--medal:before { content:"\f10c"; }
+.icon--more:before { content:"\f10d"; }
+.icon--phone:before { content:"\f10e"; }
+.icon--player:before { content:"\f10f"; }
+.icon--podium:before { content:"\f110"; }
+.icon--strategie:before { content:"\f111"; }
+.icon--webdesign:before { content:"\f112"; }
+.icon--website:before { content:"\f113"; }

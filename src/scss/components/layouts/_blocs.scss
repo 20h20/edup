@@ -1,0 +1,119 @@
+/* -------------------------------
+BLOCS SIMPLE COMPONENT
+------------------------------- */
+.cbo-blocs{
+  position: relative;
+
+  .blocs-title{
+    margin-bottom: 3.125rem;
+  }
+  .blocs-list{
+    position: relative;
+    z-index: 2;
+
+    .list-el{
+      margin: 1.25rem 0;
+
+      .el-inner{
+        text-align: center;
+        background: $colorwhite;
+        overflow: hidden;
+        border-radius: $borderbig;
+        border: 0.0625rem solid $colorblack;
+        padding: 2.5rem 1.25rem;
+        display: block;
+        color: $colorblack;
+
+        .inner-content{
+          display: block;
+
+          .inner-title{
+            margin-bottom: 1.25rem;
+            width: 100%;
+            display: block;
+
+            .inner-icon{
+              width: 3.75rem;
+              height: 3.75rem;
+              margin: 0 auto .625rem auto;
+              display: block;
+            }
+          }
+          .content-text{
+            display: block;
+          }
+        }
+        .cbo-button{
+          margin-top: 2.5rem;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+  .cbo-blocs{
+    .blocs-list{
+      display: flex;
+      flex-wrap: wrap;
+      margin: -0.625rem;
+  
+      .list-el{
+        width: 50%;
+        margin: 0;
+        padding: 0.625rem;
+
+        .el-inner{
+          height: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          justify-content: space-between;
+
+          .inner-content{
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min){
+  .cbo-blocs{
+    .blocs-list{
+      .list-el{
+        width: 33.3333%;
+      }
+    }
+  }
+}
+/* -------------------------------
+LARGE SCREENS
+------------------------------- */
+@media (min-width: $screen-lg-min){
+  .cbo-blocs{
+    .blocs-list{
+      margin: -0.9375rem;
+  
+      .list-el{
+        padding: 0.9375rem;
+
+        .el-inner{
+          padding: 2.75rem 1.5rem;
+
+          .inner-content{  
+            .inner-title{
+              margin-bottom: 2.125rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

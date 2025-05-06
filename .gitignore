@@ -1,0 +1,11 @@
+# NPM
+/node_modules
+/package-lock.json
+
+# Thumbs
+Thumbs.db
+.idea
+.DS_Store
+
+
+# .github

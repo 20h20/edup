@@ -1,0 +1,125 @@
+/* -------------------------------
+CASE STUDY BLOC MICRO COMPONENT
+------------------------------- */
+.articles-list{
+	.el--case{
+		margin: 1.25rem 0;
+
+		.el-inner{
+			border-radius: $bordersmall;
+			overflow: hidden;
+			height: 100%;
+			display: block;
+			box-shadow: 0 0 0 0.125rem $colororange inset;
+			color: $colorbluedark;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: column;
+
+			.el-picture{
+				background: $colororange;
+				padding: 0.625rem 0.4375rem;
+				display: flex;
+				flex-wrap: wrap;
+				overflow: hidden;
+
+				.tags-list{
+					margin: -0.3125rem;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: center;
+					width: 100%;
+
+					.tag{
+						height: 2.4375rem;
+						margin: 0.3125rem;
+						display: inline-flex;
+						align-items: center;
+						border-radius: 99rem;
+						padding: 0 0.625rem;
+						width: fit-content;
+						height: 2.375rem;
+						margin: 0.3125rem;
+						font-weight: bold;
+						color: $colororange;
+						background: $colorwhite;
+					}
+				}
+				.picture-inner{
+					display: block;
+					width: 100%;
+
+					img{
+						position: relative;
+						max-width: 12.5rem;
+						max-height: 5.25rem;
+						margin: 1.25rem auto 3.625rem;
+					}
+				}
+			}
+			.el-content{
+				padding: 1.25rem;
+				display: flex;
+				flex-wrap: wrap;
+				flex: 1;
+				justify-content: space-between;
+				flex-direction: column;
+
+				.content-title{
+					margin-bottom: 0.9375rem;
+					width: 100%;
+				}
+				.content-text{
+					display: block;
+					margin-bottom: 1.875rem;
+				}
+			}
+		}
+	}
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+	.articles-list{
+		.el--case{
+			margin: 0;
+			padding: 0.75rem;
+			width: 50%;
+		}
+	}
+}
+/* -------------------------------
+MEDIUM SCREENS
+------------------------------- */
+@media (min-width: $screen-md-min) {
+	.articles-list{
+		.el--case{
+			width: 33.3333%;
+
+			.el-inner{
+				.el-picture{
+					padding: 0.625rem 0.4375rem;
+
+					.picture-inner {
+						img{
+							opacity: 1;
+							transition: all .4s;
+						}
+					}
+				}
+			}
+			&:hover{
+				.el-inner{
+					.el-picture{
+						.picture-inner {
+							img{
+								opacity: .5;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

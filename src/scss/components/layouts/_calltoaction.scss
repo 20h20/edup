@@ -1,0 +1,98 @@
+/* -------------------------------
+CALL TO ACTION COMPONENT
+------------------------------- */
+.cbo-calltoaction{
+  background: $colororange;
+
+  .calltoaction-list{
+    .list-el{
+      display: block;
+      margin: 1.25rem 0;
+
+      .el-inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.875rem 1.25rem;
+        background: $colorwhite;
+        border-radius: $bordersmall;
+
+        .inner-content{
+          display: block;
+
+          .inner-title{
+            color: $colororange;
+            display: block;
+            margin-bottom: 0.625rem;
+          }
+          .inner-text{
+            color: $colorbluedark;
+            font-size: 0.875rem;
+            line-height: 1.125rem;
+          }
+        }
+        i{
+          position: relative;
+          background: $colororange;
+          color: $colorwhite;
+          border-radius: 99rem;
+          min-width: 2.5rem;
+          height: 2.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.125rem;
+          margin-left: 1.25rem;
+          overflow: hidden;
+          transition: all .6s;
+
+          &:before{
+            left: 0.6875rem;
+            position: absolute;
+            transition: all .6s
+          }
+          &:after{
+            content: '\f102';
+            font-family:"icons";
+            opacity: 0;
+            left: -3.125rem;
+            position: absolute;
+            transition: all .6s
+          }
+        }
+      }
+    }
+  }
+}
+/* -------------------------------
+SMALL SCREENS
+------------------------------- */
+@media (min-width: $screen-sm-min){
+  .cbo-calltoaction{  
+    .calltoaction-list{
+      display: flex;
+      justify-content: center;
+      margin: 0 -1.25rem;
+
+      .list-el{
+        width: 50%;
+        margin: 0;
+        padding: 0 1.25rem;
+
+        &:hover{
+          .el-inner{
+            i{
+              &:before{
+                left: 6.25rem;
+              }
+              &:after{
+                opacity: 1;
+                left: 0.6875rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
