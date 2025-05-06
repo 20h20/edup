@@ -10,6 +10,8 @@
 			'widget_website_views'     => array('id' => 'widget_website_views', 'title' => 'Nombre de visites', 'callback' => 'afficher_visites_site_widget', 'args' => array()),
 			'widget_leads_cf7'       => array('id' => 'widget_leads_cf7', 'title' => 'Nombre de leads générés', 'callback' => 'display_leads_cf7_widget', 'args' => array()),
 			'google_sheet_dashboard' => array('id' => 'google_sheet_dashboard', 'title' => 'Récapitulatif du temps', 'callback' => 'display_google_sheet_data', 'args' => array()),
+			'custom_git_commits'     => array('id' => 'custom_git_commits', 'title' => 'Activité Git récente', 'callback' => 'render_custom_git_commits_dashboard_widget', 'args' => array(),
+			),
 		);
 
 		$wp_meta_boxes['dashboard']['side']['core'] = array(
@@ -18,18 +20,18 @@
 	}
 
 
-	// Verrouillage du layout du dashboard
-	add_action('admin_head-index.php', 'lock_dashboard_layout');
-	function lock_dashboard_layout() {
-		if (current_user_can('edit_dashboard')) {
-			echo '<style>
-				#dashboard-widgets .postbox-container { min-height: 0 !important; }
-				.postbox .handlediv, .postbox h2.hndle { cursor: default !important; }
-				.postbox .hndle { pointer-events: none; }
-				.postbox .handle-actions, #screen-options-link, #screen-options-wrap { display: none !important; }
-			</style>';
-		}
-	}
+	// // Verrouillage du layout du dashboard
+	// add_action('admin_head-index.php', 'lock_dashboard_layout');
+	// function lock_dashboard_layout() {
+	// 	if (current_user_can('edit_dashboard')) {
+	// 		echo '<style>
+	// 			#dashboard-widgets .postbox-container { min-height: 0 !important; }
+	// 			.postbox .handlediv, .postbox h2.hndle { cursor: default !important; }
+	// 			.postbox .hndle { pointer-events: none; }
+	// 			.postbox .handle-actions, #screen-options-link, #screen-options-wrap { display: none !important; }
+	// 		</style>';
+	// 	}
+	// }
 
 
 	// Widget Bienvenue
@@ -241,4 +243,55 @@
 		}
 		wp_reset_postdata();
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	function custom_git_commits_dashboard_widget() {
+		wp_add_dashboard_widget(
+			'custom_git_commits',
+			'Activité Git récente',
+			'render_custom_git_commits_dashboard_widget'
+		);
+	}
+	add_action('wp_dashboard_setup', 'custom_git_commits_dashboard_widget');
+	
+	function render_custom_git_commits_dashboard_widget() {
+		$git_dir = get_stylesheet_directory(); // racine du thème
+	
+		if (!is_dir($git_dir . '/.git')) {
+			echo '<p>Répertoire Git non trouvé.</p>';
+			return;
+		}
+	
+		$command = 'cd ' . escapeshellarg($git_dir) . ' && git log -n 5 --pretty=format:"%h - %an : %s (%cr)" 2>&1';
+		$output = shell_exec($command);
+	
+		if (!$output) {
+			echo '<p>Impossible de récupérer les commits Git. Assure-toi que PHP peut exécuter les commandes shell et que Git est installé.</p>';
+		} else {
+			echo '<pre style="white-space: pre-wrap;">' . esc_html($output) . '</pre>';
+		}
+	}
+	
 ?>
