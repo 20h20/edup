@@ -10,12 +10,8 @@
 			'widget_website_views'     => array('id' => 'widget_website_views', 'title' => 'Nombre de visites', 'callback' => 'afficher_visites_site_widget', 'args' => array()),
 			'widget_leads_cf7'       => array('id' => 'widget_leads_cf7', 'title' => 'Nombre de leads générés', 'callback' => 'display_leads_cf7_widget', 'args' => array()),
 			'google_sheet_dashboard' => array('id' => 'google_sheet_dashboard', 'title' => 'Récapitulatif du temps', 'callback' => 'display_google_sheet_data', 'args' => array()),
-			'custom_git_commits'     => array('id' => 'custom_git_commits', 'title' => 'Activité Git récente', 'callback' => 'render_custom_git_commits_dashboard_widget', 'args' => array(),
+			'custom_git_commits'     => array('id' => 'custom_git_commits', 'title' => 'Modifications récentes', 'callback' => 'render_custom_git_commits_dashboard_widget', 'args' => array(),
 			),
-		);
-
-		$wp_meta_boxes['dashboard']['side']['core'] = array(
-			'wpc_custom_activity' => array('id' => 'wpc_custom_activity', 'title' => 'Activité récente', 'callback' => 'wpc_dashboard_custom_activity', 'args' => array()),
 		);
 	}
 
@@ -222,76 +218,36 @@
 	}
 
 
-	// Widget activité récente (produits / portfolio)
-	function wpc_dashboard_custom_activity() {
-		$query = new WP_Query([
-			'post_type'	=> ['casestudies', 'page'],
-			'posts_per_page' => 6,
-			'post_status'	=> 'publish',
-			'orderby'	=> 'date',
-			'order'	=> 'DESC'
-		]);
-		if ($query->have_posts()) {
-			echo '<ul>';
-			while ($query->have_posts()) {
-				$query->the_post();
-				echo '<li><i class="icon icon--devis"></i> <a href="' . get_edit_post_link() . '">' . get_the_title() . ' <span class="date">' . get_the_date() . '</span></a></li>';
-			}
-			echo '</ul>';
-		} else {
-			echo '<p>Aucun élément récent dans "Page" ou "Étude de cas".</p>';
-		}
-		wp_reset_postdata();
-	}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	function custom_git_commits_dashboard_widget() {
-		wp_add_dashboard_widget(
-			'custom_git_commits',
-			'Activité Git récente',
-			'render_custom_git_commits_dashboard_widget'
-		);
-	}
-	add_action('wp_dashboard_setup', 'custom_git_commits_dashboard_widget');
-	
+	// Affichage des modifications via Git
 	function render_custom_git_commits_dashboard_widget() {
-		$git_dir = get_stylesheet_directory(); // racine du thème
+		$git_dir = get_stylesheet_directory();
 	
 		if (!is_dir($git_dir . '/.git')) {
 			echo '<p>Répertoire Git non trouvé.</p>';
 			return;
 		}
 	
-		$command = 'cd ' . escapeshellarg($git_dir) . ' && git log -n 5 --pretty=format:"%h - %an : %s (%cr)" 2>&1';
+		// Format : hash|auteur|message|date_relative
+		$command = 'cd ' . escapeshellarg($git_dir) . ' && git log -n 5 --pretty=format:"%h|%an|%s|%cr" 2>&1';
 		$output = shell_exec($command);
 	
 		if (!$output) {
 			echo '<p>Impossible de récupérer les commits Git. Assure-toi que PHP peut exécuter les commandes shell et que Git est installé.</p>';
 		} else {
-			echo '<pre style="white-space: pre-wrap;">' . esc_html($output) . '</pre>';
+			$commits = explode("\n", trim($output));
+	
+			echo '<ul>';
+	
+			foreach ($commits as $commit) {
+				list($hash, $author, $message, $relative_date) = explode('|', $commit);
+	
+				echo '<li>';
+				echo '<span class="cbo-gitid">Identifiant de la modification : <code>' . esc_html($hash) . '</code></span><br>';
+				echo '<strong class="cbo-gittitle">' . esc_html($message) . ' <em> (' . esc_html($relative_date) . ')</em></strong><br>';
+				echo '</li>';
+			}
+	
+			echo '</ul>';
 		}
 	}
-	
 ?>

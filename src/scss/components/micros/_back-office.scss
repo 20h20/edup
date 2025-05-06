@@ -181,7 +181,7 @@ BACK OFFICE COMPONENT
 						}
 					}
 				}
-				#wpc_custom_activity{
+				#custom_git_commits{
 					border:none;
 					width: 28%;
 					box-shadow: none;
@@ -194,28 +194,33 @@ BACK OFFICE COMPONENT
 						height: calc(100% - 56px);
 			
 						ul{
-							margin: -10px 0; 
+							margin: -10px 0;
 			
 							li{
-								position:relative;
-								display:flex;
-								flex-wrap:wrap;
-								align-items:center;
 								margin: 10px 0;
-								font-size: 16px;
-								color: #16171A;
-			
-								a{
-									color: #16171A;
-			
-									.date{
-										display: block;
-										font-size: 14px;
-										opacity: .6;
-									}
+
+								.cbo-gitid{
+									font-size: 12px;
+									color: rgba($colorblack, .4);
 								}
-								i{
-									margin-right: 10px;
+								.cbo-gittitle{
+									color: $dbcolorgreen;
+									display: flex;
+									align-items: center;
+									margin-top: 6px;
+
+									&:before{
+										font-family:"icons";
+										content:"\f104";
+										margin-right: 6px;
+										width: 20px;
+										height: 20px;
+										border:1px solid;
+										border-radius:99rem;
+										display: flex;
+										align-items: center;
+										justify-content: center;
+									}
 								}
 							}
 						}
