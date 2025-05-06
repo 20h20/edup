@@ -16,18 +16,18 @@
 	}
 
 
-	// // Verrouillage du layout du dashboard
-	// add_action('admin_head-index.php', 'lock_dashboard_layout');
-	// function lock_dashboard_layout() {
-	// 	if (current_user_can('edit_dashboard')) {
-	// 		echo '<style>
-	// 			#dashboard-widgets .postbox-container { min-height: 0 !important; }
-	// 			.postbox .handlediv, .postbox h2.hndle { cursor: default !important; }
-	// 			.postbox .hndle { pointer-events: none; }
-	// 			.postbox .handle-actions, #screen-options-link, #screen-options-wrap { display: none !important; }
-	// 		</style>';
-	// 	}
-	// }
+	// Verrouillage du layout du dashboard
+	add_action('admin_head-index.php', 'lock_dashboard_layout');
+	function lock_dashboard_layout() {
+		if (current_user_can('edit_dashboard')) {
+			echo '<style>
+				#dashboard-widgets .postbox-container { min-height: 0 !important; }
+				.postbox .handlediv, .postbox h2.hndle { cursor: default !important; }
+				.postbox .hndle { pointer-events: none; }
+				.postbox .handle-actions, #screen-options-link, #screen-options-wrap { display: none !important; }
+			</style>';
+		}
+	}
 
 
 	// Widget Bienvenue
@@ -240,13 +240,11 @@
 	
 			foreach ($commits as $commit) {
 				list($hash, $author, $message, $relative_date) = explode('|', $commit);
-	
 				echo '<li>';
 				echo '<span class="cbo-gitid">Identifiant de la modification : <code>' . esc_html($hash) . '</code></span><br>';
 				echo '<strong class="cbo-gittitle">' . esc_html($message) . ' <em> (' . esc_html($relative_date) . ')</em></strong><br>';
 				echo '</li>';
 			}
-	
 			echo '</ul>';
 		}
 	}
